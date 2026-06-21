@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en" class="lang-en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sebastian Ramirez — Senior Operations Leader | Workforce Strategy | Omnichannel CX">
+<title>Sebastian Ramirez — Senior Operations Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #080d14;
+  --navy: #0d1b2e;
+  --navy2: #162540;
+  --white: #eef2f7;
+  --accent: #3b9eff;
+  --accent-bright: #60b4ff;
+  --accent2: #1e6fc8;
+  --accent-glow: rgba(59,158,255,0.10);
+  --muted: #6a85a0;
+  --border: rgba(59,158,255,0.10);
+  --border-hover: rgba(59,158,255,0.30);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 3rem;
+  background: rgba(8,13,20,0.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.1em; color: var(--accent); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-cta { background: var(--accent); color: var(--black); padding: 0.5rem 1.3rem; border-radius: 3px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+.nav-cta:hover { background: var(--accent-bright); }
+
+/* HERO */
+#hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 80px; position: relative; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 65% 40%, rgba(30,111,200,0.18) 0%, transparent 55%), radial-gradient(ellipse at 15% 75%, rgba(59,158,255,0.07) 0%, transparent 50%); }
+.hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(59,158,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(59,158,255,0.025) 1px, transparent 1px); background-size: 60px 60px; }
+.hero-left { display: flex; flex-direction: column; justify-content: center; padding: 4rem 3rem 4rem 4rem; position: relative; z-index: 2; }
+.hero-tag { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(59,158,255,0.08); border: 1px solid rgba(59,158,255,0.25); color: var(--accent); padding: 0.35rem 0.9rem; border-radius: 3px; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2rem; width: fit-content; }
+.hero-tag::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.65); } }
+.hero-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem, 7vw, 7rem); line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 1.5rem; }
+.hero-name span { color: var(--accent); }
+.hero-subtitle { font-size: 1.05rem; font-weight: 300; color: var(--muted); line-height: 1.75; max-width: 480px; margin-bottom: 2.5rem; }
+.hero-subtitle strong { color: var(--white); font-weight: 500; }
+.hero-stats { display: flex; gap: 2.5rem; margin-bottom: 2.5rem; }
+.stat-item { display: flex; flex-direction: column; gap: 0.2rem; }
+.stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: var(--accent); line-height: 1; }
+.stat-label { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+.hero-actions { display: flex; gap: 1rem; align-items: center; }
+.btn-primary { background: var(--accent); color: var(--black); padding: 0.85rem 2rem; border-radius: 3px; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; }
+.btn-primary:hover { background: var(--accent-bright); transform: translateY(-1px); }
+.btn-secondary { border: 1px solid rgba(59,158,255,0.3); color: var(--white); padding: 0.85rem 2rem; border-radius: 3px; font-size: 0.82rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; }
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+.hero-right { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 4rem 4rem 4rem 2rem; position: relative; z-index: 2; }
+.hero-card { background: var(--navy); border: 1px solid var(--border); border-radius: 6px; padding: 2rem; width: 100%; max-width: 420px; }
+.card-label { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; }
+.card-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.skill-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+.chip { background: var(--navy2); border: 1px solid var(--border); color: var(--muted); padding: 0.3rem 0.75rem; border-radius: 3px; font-size: 0.72rem; font-family: 'DM Mono', monospace; transition: all 0.2s; }
+.chip:hover { color: var(--accent); border-color: var(--border-hover); }
+.chip.active { color: var(--accent); border-color: rgba(59,158,255,0.3); background: var(--accent-glow); }
+.location-badge { display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; color: var(--muted); margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+.location-dot { width: 8px; height: 8px; background: #4caf50; border-radius: 50%; flex-shrink: 0; }
+
+/* SECTIONS */
+section { padding: 6rem 4rem; }
+.section-header { margin-bottom: 3.5rem; }
+.section-tag { font-size: 0.68rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; font-family: 'DM Mono', monospace; margin-bottom: 0.75rem; }
+.section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 4vw, 4rem); letter-spacing: 0.02em; line-height: 1; }
+.section-title span { color: var(--accent); }
+
+/* ABOUT */
+#about { background: var(--navy); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.about-text { font-size: 1rem; line-height: 1.85; color: rgba(238,242,247,0.7); }
+.about-text p { margin-bottom: 1.2rem; }
+.about-text strong { color: var(--white); font-weight: 500; }
+.wins-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.win-card { background: var(--black); border: 1px solid var(--border); padding: 1.25rem; border-radius: 5px; transition: border-color 0.2s; }
+.win-card:hover { border-color: var(--border-hover); }
+.win-icon { font-size: 1.4rem; margin-bottom: 0.5rem; }
+.win-num { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--accent); line-height: 1; margin-bottom: 0.25rem; }
+.win-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
+/* GLOBAL FOOTPRINT */
+#footprint { background: var(--black); }
+.footprint-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+
+.regions-group { margin-bottom: 2.5rem; }
+.regions-group-label { font-size: 0.68rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; font-family: 'DM Mono', monospace; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+.regions-group-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.region-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.region-pill { display: flex; align-items: center; gap: 0.5rem; background: var(--navy); border: 1px solid var(--border); border-radius: 4px; padding: 0.45rem 0.9rem; font-size: 0.8rem; color: var(--white); transition: all 0.2s; }
+.region-pill:hover { border-color: var(--border-hover); color: var(--accent); }
+.region-pill.highlight { border-color: rgba(59,158,255,0.35); background: var(--accent-glow); color: var(--accent); }
+.region-flag { font-size: 1rem; }
+
+.india-callout { background: linear-gradient(135deg, var(--navy) 0%, rgba(30,111,200,0.15) 100%); border: 1px solid rgba(59,158,255,0.25); border-radius: 8px; padding: 1.75rem; margin-top: 1.5rem; }
+.india-callout-label { font-size: 0.68rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; font-family: 'DM Mono', monospace; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+.india-callout-label::before { content: '◆'; font-size: 0.5rem; }
+.india-callout-text { font-size: 0.88rem; color: rgba(238,242,247,0.75); line-height: 1.7; }
+.india-callout-text strong { color: var(--white); }
+
+/* SECTORS */
+.sectors-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.sector-card { background: var(--navy); border: 1px solid var(--border); border-radius: 6px; padding: 1.35rem 1.5rem; transition: all 0.2s; }
+.sector-card:hover { border-color: var(--border-hover); transform: translateX(3px); }
+.sector-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.6rem; }
+.sector-icon { font-size: 1.25rem; }
+.sector-name { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 0.05em; color: var(--white); }
+.sector-brands { font-size: 0.75rem; color: var(--muted); line-height: 1.6; font-family: 'DM Mono', monospace; }
+.sector-brands span { color: var(--accent-bright); }
+
+/* EXPERIENCE */
+#experience { background: var(--navy); }
+.exp-timeline { position: relative; padding-left: 2rem; }
+.exp-timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--border); }
+.exp-item { position: relative; margin-bottom: 3rem; padding-left: 2.5rem; }
+.exp-item::before { content: ''; position: absolute; left: -2rem; top: 0.4rem; width: 9px; height: 9px; border-radius: 50%; border: 2px solid var(--accent); background: var(--navy); transform: translateX(-4px); }
+.exp-item.current::before { background: var(--accent); }
+.exp-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+.exp-company { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.05em; color: var(--white); }
+.exp-period { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--muted); background: var(--navy2); padding: 0.2rem 0.6rem; border-radius: 3px; }
+.exp-role { font-size: 0.82rem; color: var(--accent); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.75rem; }
+.exp-bullets { list-style: none; }
+.exp-bullets li { font-size: 0.88rem; color: rgba(238,242,247,0.6); line-height: 1.7; padding-left: 1rem; position: relative; margin-bottom: 0.3rem; }
+.exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent2); font-size: 0.75rem; }
+.exp-bullets strong { color: var(--white); font-weight: 500; }
+
+/* PROJECTS */
+#projects { background: var(--black); }
+.projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.project-card { background: var(--navy); border: 1px solid var(--border); border-radius: 6px; padding: 2rem; display: flex; flex-direction: column; gap: 1rem; transition: all 0.25s; position: relative; overflow: hidden; }
+.project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent2), var(--accent)); opacity: 0; transition: opacity 0.25s; }
+.project-card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
+.project-card:hover::before { opacity: 1; }
+.project-type { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; display: flex; align-items: center; gap: 0.5rem; }
+.project-type-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); display: inline-block; }
+.project-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.03em; line-height: 1.1; color: var(--white); }
+.project-desc { font-size: 0.87rem; color: rgba(238,242,247,0.6); line-height: 1.7; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.25rem; }
+.project-tag { background: var(--navy2); border: 1px solid var(--border); color: var(--muted); padding: 0.2rem 0.6rem; border-radius: 2px; font-size: 0.68rem; font-family: 'DM Mono', monospace; }
+.project-impact { display: flex; align-items: center; gap: 0.6rem; padding-top: 0.75rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); }
+.project-impact strong { color: var(--accent); font-weight: 500; }
+
+/* SKILLS */
+#skills { background: var(--navy); }
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.skill-block { background: var(--black); border: 1px solid var(--border); padding: 1.75rem; border-radius: 5px; transition: all 0.25s; }
+.skill-block:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+.skill-block-icon { font-size: 1.6rem; margin-bottom: 0.75rem; }
+.skill-block-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.05em; margin-bottom: 0.5rem; color: var(--white); }
+.skill-block-context { font-size: 0.73rem; color: var(--accent); font-family: 'DM Mono', monospace; margin-bottom: 0.85rem; line-height: 1.4; }
+.skill-list { list-style: none; }
+.skill-list li { font-size: 0.78rem; color: var(--muted); padding: 0.25rem 0; border-bottom: 1px solid rgba(59,158,255,0.05); display: flex; align-items: center; gap: 0.5rem; }
+.skill-list li::before { content: '·'; color: var(--accent); font-size: 1.2rem; line-height: 0; }
+.tools-bar { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+.tool-pill { background: var(--accent-glow); border: 1px solid rgba(59,158,255,0.2); color: var(--accent); padding: 0.4rem 1rem; border-radius: 3px; font-size: 0.75rem; font-family: 'DM Mono', monospace; letter-spacing: 0.05em; }
+
+/* CTA */
+#cta { background: linear-gradient(135deg, var(--accent2) 0%, #1a4f9c 50%, var(--accent) 100%); color: var(--white); padding: 5rem 4rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; position: relative; overflow: hidden; }
+#cta::before { content: ''; position: absolute; top: -50%; right: -10%; width: 500px; height: 500px; border-radius: 50%; background: rgba(255,255,255,0.04); }
+.cta-label { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; margin-bottom: 0.5rem; opacity: 0.65; }
+.cta-heading { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 4vw, 4.5rem); letter-spacing: 0.02em; line-height: 1; position: relative; z-index: 1; }
+.cta-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; position: relative; z-index: 1; }
+.btn-dark { background: rgba(8,13,20,0.7); color: var(--white); border: 1px solid rgba(255,255,255,0.2); padding: 1rem 2.5rem; border-radius: 3px; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; backdrop-filter: blur(8px); }
+.btn-dark:hover { background: rgba(8,13,20,0.9); border-color: rgba(255,255,255,0.4); }
+.btn-outline-dark { border: 1px solid rgba(255,255,255,0.3); color: var(--white); padding: 0.9rem 2rem; border-radius: 3px; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; }
+.btn-outline-dark:hover { background: rgba(255,255,255,0.08); border-color: white; }
+
+/* CONTACT */
+#contact { background: var(--black); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+.contact-info { display: flex; flex-direction: column; gap: 1.25rem; }
+.contact-item { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; background: var(--navy); border: 1px solid var(--border); border-radius: 4px; text-decoration: none; color: var(--white); transition: all 0.2s; }
+.contact-item:hover { border-color: var(--border-hover); transform: translateX(4px); }
+.contact-icon { font-size: 1.2rem; width: 20px; text-align: center; }
+.contact-type { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+.contact-value { font-size: 0.9rem; color: var(--white); margin-top: 0.1rem; }
+.contact-note { font-size: 1rem; line-height: 1.8; color: rgba(238,242,247,0.6); }
+.contact-note strong { color: var(--white); }
+.avail-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(76,175,80,0.1); border: 1px solid rgba(76,175,80,0.25); color: #4caf50; padding: 0.4rem 1rem; border-radius: 3px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 1.5rem; }
+.avail-dot { width: 6px; height: 6px; background: #4caf50; border-radius: 50%; animation: pulse 2s infinite; }
+
+/* FOOTER */
+footer { background: var(--navy); border-top: 1px solid var(--border); padding: 2rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.1em; color: var(--accent); }
+.footer-copy { font-size: 0.75rem; color: var(--muted); }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { font-size: 0.75rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--accent); }
+
+/* ANIMATIONS */
+.fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: none; }
+
+/* MOBILE */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  #hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-left { padding: 3rem 1.5rem; }
+  section { padding: 4rem 1.5rem; }
+  .about-grid, .contact-grid, .footprint-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+  .wins-grid, .sectors-grid { grid-template-columns: 1fr 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  #cta { padding: 3rem 1.5rem; }
+  footer { padding: 1.5rem; flex-direction: column; text-align: center; }
+}
+@media (max-width: 600px) {
+  .skills-grid, .sectors-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 1.5rem; }
+}
+
+/* LANGUAGE TOGGLE */
+html.lang-es .lang-en { display: none !important; }
+html.lang-en .lang-es { display: none !important; }
+.nav-right { display: flex; align-items: center; gap: 1rem; }
+.lang-toggle { display: flex; align-items: center; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+.lang-btn { background: transparent; border: none; color: var(--muted); padding: 0.45rem 0.8rem; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; cursor: pointer; transition: all 0.2s; font-family: 'DM Sans', sans-serif; }
+.lang-btn:hover { color: var(--white); }
+.lang-btn.active { background: var(--accent); color: var(--black); }
+@media (max-width: 900px) {
+  .nav-right { gap: 0.6rem; }
+  .nav-cta { padding: 0.5rem 1rem; font-size: 0.7rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">SR</span>
+  <ul class="nav-links">
+    <li><a href="#about"><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a></li>
+    <li><a href="#footprint"><span class="lang-en">Global</span><span class="lang-es">Global</span></a></li>
+    <li><a href="#experience"><span class="lang-en">Experience</span><span class="lang-es">Experiencia</span></a></li>
+    <li><a href="#projects"><span class="lang-en">Projects</span><span class="lang-es">Proyectos</span></a></li>
+    <li><a href="#skills"><span class="lang-en">Skills</span><span class="lang-es">Habilidades</span></a></li>
+    <li><a href="#contact"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+    </div>
+    <a href="mailto:sebastianramirezrivera@gmail.com" class="nav-cta"><span class="lang-en">Let's Connect</span><span class="lang-es">Conectemos</span></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-left fade-in">
+    <div class="hero-tag"><span class="lang-en">Available for new opportunities</span><span class="lang-es">Disponible para nuevas oportunidades</span></div>
+    <h1 class="hero-name">Sebastian<br><span>Ramirez</span></h1>
+    <p class="hero-subtitle">
+      <span class="lang-en">Senior Operations Leader with <strong>8+ years</strong> transforming Contact Center performance across the US, LATAM, Europe, Asia & the Philippines. Specialist in <strong>Workforce Strategy</strong>, omnichannel CX, and turning operational complexity into measurable results.</span>
+      <span class="lang-es">Líder Senior en Operaciones con <strong>más de 8 años</strong> transformando el desempeño de Contact Centers en EE.UU., LATAM, Europa, Asia y Filipinas. Especialista en <strong>Estrategia de Workforce</strong>, CX omnicanal, y en convertir la complejidad operativa en resultados medibles.</span>
+    </p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">8+</span>
+        <span class="stat-label"><span class="lang-en">Years Experience</span><span class="lang-es">Años de Experiencia</span></span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">3K+</span>
+        <span class="stat-label"><span class="lang-en">Agents Managed</span><span class="lang-es">Agentes Gestionados</span></span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">11</span>
+        <span class="stat-label"><span class="lang-en">Countries</span><span class="lang-es">Países</span></span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">20+</span>
+        <span class="stat-label"><span class="lang-en">Enterprise Brands</span><span class="lang-es">Marcas Enterprise</span></span>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a href="mailto:sebastianramirezrivera@gmail.com" class="btn-primary"><span class="lang-en">Get in Touch →</span><span class="lang-es">Contáctame →</span></a>
+      <a href="https://www.linkedin.com/in/sebastian-ramirez-rivera-25135a190/" target="_blank" class="btn-secondary">LinkedIn ↗</a>
+    </div>
+  </div>
+  <div class="hero-right fade-in">
+    <div class="hero-card">
+      <div class="card-label"><span class="lang-en">Core Competencies</span><span class="lang-es">Competencias Clave</span></div>
+      <div class="skill-chips">
+        <span class="chip active"><span class="lang-en">Workforce Management</span><span class="lang-es">Gestión de Workforce</span></span>
+        <span class="chip active"><span class="lang-en">KPI Optimization</span><span class="lang-es">Optimización de KPIs</span></span>
+        <span class="chip"><span class="lang-en">Capacity Planning</span><span class="lang-es">Planificación de Capacidad</span></span>
+        <span class="chip active"><span class="lang-en">Omnichannel CX</span><span class="lang-es">CX Omnicanal</span></span>
+        <span class="chip"><span class="lang-en">Financial Reporting</span><span class="lang-es">Reportería Financiera</span></span>
+        <span class="chip">Power BI</span>
+        <span class="chip active"><span class="lang-en">AI Productivity</span><span class="lang-es">Productividad con IA</span></span>
+        <span class="chip">Lean Six Sigma</span>
+        <span class="chip">Agile / Scrum</span>
+        <span class="chip"><span class="lang-en">Vendor Management</span><span class="lang-es">Gestión de Proveedores</span></span>
+        <span class="chip active"><span class="lang-en">Operations Strategy</span><span class="lang-es">Estrategia de Operaciones</span></span>
+        <span class="chip"><span class="lang-en">Process Automation</span><span class="lang-es">Automatización de Procesos</span></span>
+      </div>
+      <div class="card-label"><span class="lang-en">Currently at</span><span class="lang-es">Actualmente en</span></div>
+      <div style="font-size:0.9rem; color:var(--white); font-weight:500; margin-bottom:0.2rem">Conduent</div>
+      <div style="font-size:0.78rem; color:var(--muted)"><span class="lang-en">Senior Business Operations · Guatemala City</span><span class="lang-es">Senior Business Operations · Ciudad de Guatemala</span></div>
+      <div class="location-badge">
+        <div class="location-dot"></div>
+        <span><span class="lang-en">Guatemala City · Open to Remote</span><span class="lang-es">Ciudad de Guatemala · Abierto a Remoto</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div>
+      <div class="section-header fade-in">
+        <div class="section-tag"><span class="lang-en">// 01 — About</span><span class="lang-es">// 01 — Acerca de</span></div>
+        <h2 class="section-title">
+          <span class="lang-en">Operations<br>at <span>Scale</span></span>
+          <span class="lang-es">Operaciones<br>a <span>Escala</span></span>
+        </h2>
+      </div>
+      <div class="about-text fade-in">
+        <p class="lang-en">I'm a results-driven Business Operations and Workforce leader known for <strong>turning operational and financial complexity into clear strategy</strong> — one that reduces costs, improves SLAs, and scales business models that didn't exist before.</p>
+        <p class="lang-es">Soy un líder en Operaciones de Negocio y Workforce orientado a resultados, conocido por <strong>convertir la complejidad operativa y financiera en estrategia clara</strong> — una que reduce costos, mejora SLAs y escala modelos de negocio que no existían antes.</p>
+
+        <p class="lang-en">At Atento, I spearheaded the <strong>first-ever WFM-as-a-Service offering</strong> for one of the company's largest accounts, opening a new revenue stream and establishing a model adopted at the organizational level.</p>
+        <p class="lang-es">En Atento, lideré la <strong>primera oferta de WFM-as-a-Service</strong> para una de las cuentas más grandes de la compañía, abriendo una nueva fuente de ingresos y estableciendo un modelo adoptado a nivel organizacional.</p>
+
+        <p class="lang-en">I combine deep expertise in omnichannel operations, workforce management, and advanced analytics with a hands-on ability to <strong>lead globally distributed teams</strong> across 11 countries spanning LATAM, the US, Europe, and Asia.</p>
+        <p class="lang-es">Combino experiencia profunda en operaciones omnicanal, gestión de workforce y analítica avanzada, con capacidad práctica para <strong>liderar equipos distribuidos globalmente</strong> en 11 países de LATAM, EE.UU., Europa y Asia.</p>
+
+        <p class="lang-en">Currently pursuing a <strong>B.S. in Technology &amp; Business Management</strong> at ESI School of Management (2024–present).</p>
+        <p class="lang-es">Actualmente cursando una <strong>Licenciatura en Tecnología y Administración de Empresas</strong> en ESI School of Management (2024–presente).</p>
+      </div>
+    </div>
+    <div class="wins-grid fade-in">
+      <div class="win-card">
+        <div class="win-icon">📉</div>
+        <div class="win-num">30%+</div>
+        <div class="win-desc">
+          <span class="lang-en">Overstaffing cost reduction — no impact to service levels</span>
+          <span class="lang-es">Reducción de costos por sobre-dotación — sin impacto en niveles de servicio</span>
+        </div>
+      </div>
+      <div class="win-card">
+        <div class="win-icon">🌍</div>
+        <div class="win-num">11</div>
+        <div class="win-desc">
+          <span class="lang-en">Countries across LATAM, US, Europe & Asia</span>
+          <span class="lang-es">Países en LATAM, EE.UU., Europa y Asia</span>
+        </div>
+      </div>
+      <div class="win-card">
+        <div class="win-icon">💡</div>
+        <div class="win-num">1st</div>
+        <div class="win-desc">
+          <span class="lang-en">WFM-as-a-Service model in Atento — new revenue stream created</span>
+          <span class="lang-es">Modelo WFM-as-a-Service en Atento — nueva fuente de ingresos creada</span>
+        </div>
+      </div>
+      <div class="win-card">
+        <div class="win-icon">🏢</div>
+        <div class="win-num">20+</div>
+        <div class="win-desc">
+          <span class="lang-en">Enterprise brands served across 6+ industry verticals</span>
+          <span class="lang-es">Marcas enterprise atendidas en más de 6 sectores</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GLOBAL FOOTPRINT -->
+<section id="footprint">
+  <div class="section-header fade-in">
+    <div class="section-tag"><span class="lang-en">// 02 — Global Footprint</span><span class="lang-es">// 02 — Presencia Global</span></div>
+    <h2 class="section-title">
+      <span class="lang-en">Where I've <span>Operated</span></span>
+      <span class="lang-es">Dónde He <span>Operado</span></span>
+    </h2>
+  </div>
+  <div class="footprint-layout">
+    <div>
+      <div class="regions-group fade-in">
+        <div class="regions-group-label"><span class="lang-en">Central America &amp; Caribbean</span><span class="lang-es">Centroamérica y el Caribe</span></div>
+        <div class="region-pills">
+          <div class="region-pill"><span class="region-flag">🇬🇹</span> Guatemala</div>
+          <div class="region-pill"><span class="region-flag">🇸🇻</span> El Salvador</div>
+          <div class="region-pill"><span class="region-flag">🇵🇷</span> Puerto Rico</div>
+        </div>
+      </div>
+      <div class="regions-group fade-in">
+        <div class="regions-group-label"><span class="lang-en">North America</span><span class="lang-es">Norteamérica</span></div>
+        <div class="region-pills">
+          <div class="region-pill"><span class="region-flag">🇺🇸</span> <span class="lang-en">United States</span><span class="lang-es">Estados Unidos</span></div>
+          <div class="region-pill"><span class="region-flag">🇲🇽</span> <span class="lang-en">Mexico</span><span class="lang-es">México</span></div>
+        </div>
+      </div>
+      <div class="regions-group fade-in">
+        <div class="regions-group-label"><span class="lang-en">South America</span><span class="lang-es">Sudamérica</span></div>
+        <div class="region-pills">
+          <div class="region-pill"><span class="region-flag">🇨🇴</span> Colombia</div>
+          <div class="region-pill"><span class="region-flag">🇧🇷</span> <span class="lang-en">Brazil</span><span class="lang-es">Brasil</span></div>
+          <div class="region-pill"><span class="region-flag">🇵🇪</span> <span class="lang-en">Peru</span><span class="lang-es">Perú</span></div>
+        </div>
+      </div>
+      <div class="regions-group fade-in">
+        <div class="regions-group-label"><span class="lang-en">Europe</span><span class="lang-es">Europa</span></div>
+        <div class="region-pills">
+          <div class="region-pill"><span class="region-flag">🇪🇸</span> <span class="lang-en">Spain</span><span class="lang-es">España</span></div>
+          <div class="region-pill"><span class="region-flag">🇬🇧</span> <span class="lang-en">United Kingdom</span><span class="lang-es">Reino Unido</span></div>
+        </div>
+      </div>
+      <div class="regions-group fade-in">
+        <div class="regions-group-label"><span class="lang-en">Asia Pacific</span><span class="lang-es">Asia Pacífico</span></div>
+        <div class="region-pills">
+          <div class="region-pill"><span class="region-flag">🇮🇳</span> India</div>
+          <div class="region-pill"><span class="region-flag">🇵🇭</span> <span class="lang-en">Philippines</span><span class="lang-es">Filipinas</span></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="india-callout fade-in">
+        <div class="india-callout-label"><span class="lang-en">Cross-Regional Versatility</span><span class="lang-es">Versatilidad Multi-Regional</span></div>
+        <div class="india-callout-text">
+          <span class="lang-en">Operating across markets as different as India, the US, LATAM, and Europe has sharpened a rare versatility — <strong>adapting communication style, navigating time zone complexity, and aligning escalation dynamics</strong> to fit each region's culture. Leading truly cross-functional, multi-region collaboration is a capability many operations leaders never develop, and it's something I bring to every global engagement at Conduent.</span>
+          <span class="lang-es">Operar en mercados tan distintos como India, EE.UU., LATAM y Europa ha perfeccionado una versatilidad poco común — <strong>adaptar el estilo de comunicación, navegar la complejidad de zonas horarias y alinear las dinámicas de escalamiento</strong> a la cultura de cada región. Liderar colaboración verdaderamente multifuncional y multi-regional es una capacidad que muchos líderes de operaciones nunca desarrollan, y es algo que aporto en cada iniciativa global en Conduent.</span>
+        </div>
+      </div>
+      <div style="margin-top: 2rem;">
+        <div class="section-tag" style="margin-bottom: 1.25rem;"><span class="lang-en">Clients & Industry Verticals</span><span class="lang-es">Clientes y Sectores de la Industria</span></div>
+        <div class="sectors-grid">
+          <div class="sector-card fade-in">
+            <div class="sector-header">
+              <span class="sector-icon">🍔</span>
+              <span class="sector-name"><span class="lang-en">Food Delivery</span><span class="lang-es">Entrega de Comida</span></span>
+            </div>
+            <div class="sector-brands"><span>Grubhub · DoorDash</span><br>Instacart · EZ Cater</div>
+          </div>
+          <div class="sector-card fade-in">
+            <div class="sector-header">
+              <span class="sector-icon">📱</span>
+              <span class="sector-name"><span class="lang-en">Telecom</span><span class="lang-es">Telecomunicaciones</span></span>
+            </div>
+            <div class="sector-brands"><span>T-Mobile · Tigo</span><br>Telefónica · Asurion</div>
+          </div>
+          <div class="sector-card fade-in">
+            <div class="sector-header">
+              <span class="sector-icon">🏦</span>
+              <span class="sector-name"><span class="lang-en">Banking & Finance</span><span class="lang-es">Banca y Finanzas</span></span>
+            </div>
+            <div class="sector-brands"><span>BBVA · PNC</span><br>Amerant Bank</div>
+          </div>
+          <div class="sector-card fade-in">
+            <div class="sector-header">
+              <span class="sector-icon">✈️</span>
+              <span class="sector-name"><span class="lang-en">Travel & Retail</span><span class="lang-es">Viajes y Retail</span></span>
+            </div>
+            <div class="sector-brands"><span>Expedia · Egencia</span><br>Fetch · Amway · Swiss Colony</div>
+          </div>
+          <div class="sector-card fade-in">
+            <div class="sector-header">
+              <span class="sector-icon">🎬</span>
+              <span class="sector-name"><span class="lang-en">Entertainment</span><span class="lang-es">Entretenimiento</span></span>
+            </div>
+            <div class="sector-brands"><span>Disney</span><br>De'Longhi</div>
+          </div>
+          <div class="sector-card fade-in">
+            <div class="sector-header">
+              <span class="sector-icon">🏥</span>
+              <span class="sector-name"><span class="lang-en">Healthcare & Gov</span><span class="lang-es">Salud y Gobierno</span></span>
+            </div>
+            <div class="sector-brands"><span>MMM Healthcare · FEMA</span><br>Maryland COVID Response</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header fade-in">
+    <div class="section-tag"><span class="lang-en">// 03 — Experience</span><span class="lang-es">// 03 — Experiencia</span></div>
+    <h2 class="section-title">
+      <span class="lang-en">Career <span>Track</span></span>
+      <span class="lang-es">Trayectoria <span>Profesional</span></span>
+    </h2>
+  </div>
+  <div class="exp-timeline">
+    <div class="exp-item current fade-in">
+      <div class="exp-meta">
+        <span class="exp-company">Conduent</span>
+        <span class="exp-period"><span class="lang-en">Jun 2024 – Present</span><span class="lang-es">Jun 2024 – Presente</span></span>
+      </div>
+      <div class="exp-role"><span class="lang-en">Senior Business Operations · Guatemala City</span><span class="lang-es">Senior Business Operations · Ciudad de Guatemala</span></div>
+      <ul class="exp-bullets">
+        <li class="lang-en">Drive enterprise-level operational and financial strategy across large-scale accounts — cutting costs and unlocking revenue growth.</li>
+        <li class="lang-es">Impulso la estrategia operativa y financiera a nivel empresarial en cuentas de gran escala — reduciendo costos y desbloqueando crecimiento de ingresos.</li>
+
+        <li class="lang-en">Lead a <strong>GitHub Copilot AI productivity measurement program</strong> — designing a phased KPI framework to quantify developer efficiency and AI adoption ROI across engineering teams.</li>
+        <li class="lang-es">Lidero un <strong>programa de medición de productividad con IA basado en GitHub Copilot</strong> — diseñando un marco de KPIs por fases para cuantificar la eficiencia de desarrolladores y el ROI de adopción de IA.</li>
+
+        <li class="lang-en">Build and maintain <strong>executive Power BI dashboards</strong> presented to the Board of Directors to monitor KPIs, financial impact, and performance trends.</li>
+        <li class="lang-es">Construyo y mantengo <strong>dashboards ejecutivos en Power BI</strong> presentados ante la Junta Directiva para monitorear KPIs, impacto financiero y tendencias de desempeño.</li>
+
+        <li class="lang-en">Lead cross-functional teams across <strong>Guatemala, India, the US, and Europe</strong> — navigating cultural complexity and time zone challenges across 4 continents.</li>
+        <li class="lang-es">Lidero equipos multifuncionales en <strong>Guatemala, India, EE.UU. y Europa</strong> — navegando la complejidad cultural y los desafíos de zona horaria en 4 continentes.</li>
+
+        <li class="lang-en">Oversee forecasting, budgeting, and performance planning for long-term operational scalability.</li>
+        <li class="lang-es">Superviso el forecasting, presupuesto y planificación de desempeño para la escalabilidad operativa a largo plazo.</li>
+      </ul>
+    </div>
+    <div class="exp-item fade-in">
+      <div class="exp-meta">
+        <span class="exp-company">Atento</span>
+        <span class="exp-period">Jul 2022 – May 2024</span>
+      </div>
+      <div class="exp-role"><span class="lang-en">Head of Workforce · Guatemala City</span><span class="lang-es">Head of Workforce · Ciudad de Guatemala</span></div>
+      <ul class="exp-bullets">
+        <li class="lang-en">Led workforce strategy for <strong>15+ enterprise US Nearshore clients</strong> across Guatemala, El Salvador, Puerto Rico, US, and Philippines — 3,000+ employees.</li>
+        <li class="lang-es">Lideré la estrategia de workforce para <strong>más de 15 clientes enterprise</strong> de la región US Nearshore en Guatemala, El Salvador, Puerto Rico, EE.UU. y Filipinas — más de 3,000 empleados.</li>
+
+        <li class="lang-en"><strong>Reduced overstaffing costs by 30%+</strong> without impacting service levels through advanced WFM methodologies.</li>
+        <li class="lang-es"><strong>Reduje los costos de sobre-dotación en más del 30%</strong> sin afectar los niveles de servicio, mediante metodologías avanzadas de WFM.</li>
+
+        <li class="lang-en">Direct ownership of operational and financial KPIs, productivity, capacity, and omnichannel performance.</li>
+        <li class="lang-es">Responsabilidad directa sobre KPIs operativos y financieros, productividad, capacidad y desempeño omnicanal.</li>
+
+        <li class="lang-en">Served enterprise brands across food delivery, telecom, banking, healthcare, travel, and entertainment verticals.</li>
+        <li class="lang-es">Brindé servicio a marcas enterprise en los sectores de entrega de comida, telecomunicaciones, banca, salud, viajes y entretenimiento.</li>
+      </ul>
+    </div>
+    <div class="exp-item fade-in">
+      <div class="exp-meta">
+        <span class="exp-company">Atento</span>
+        <span class="exp-period">Jul 2021 – Jul 2022</span>
+      </div>
+      <div class="exp-role"><span class="lang-en">Workforce Manager · Guatemala City</span><span class="lang-es">Workforce Manager · Ciudad de Guatemala</span></div>
+      <ul class="exp-bullets">
+        <li class="lang-en">Managed end-to-end workforce planning, forecasting, and performance optimization for large-scale client programs.</li>
+        <li class="lang-es">Gestioné la planificación de workforce de punta a punta, forecasting y optimización de desempeño para programas de clientes de gran escala.</li>
+
+        <li class="lang-en"><strong>Pioneered and closed the first-ever WFM-as-a-Service deal</strong> for MMM Healthcare — a new revenue model adopted organizationally.</li>
+        <li class="lang-es"><strong>Diseñé y cerré el primer acuerdo de WFM-as-a-Service</strong> para MMM Healthcare — un nuevo modelo de ingresos adoptado a nivel organizacional.</li>
+
+        <li class="lang-en">Analyzed KPIs and operational data to proactively identify risks in service quality and cost efficiency.</li>
+        <li class="lang-es">Analicé KPIs y datos operativos para identificar de forma proactiva riesgos en calidad de servicio y eficiencia de costos.</li>
+      </ul>
+    </div>
+    <div class="exp-item fade-in">
+      <div class="exp-meta">
+        <span class="exp-company">Atento</span>
+        <span class="exp-period">Mar 2021 – Jul 2021</span>
+      </div>
+      <div class="exp-role"><span class="lang-en">Project Manager · Guatemala City</span><span class="lang-es">Project Manager · Ciudad de Guatemala</span></div>
+      <ul class="exp-bullets">
+        <li class="lang-en">Led cross-functional projects for operational optimization and process standardization.</li>
+        <li class="lang-es">Lideré proyectos multifuncionales para optimización operativa y estandarización de procesos.</li>
+
+        <li class="lang-en">Implemented the <strong>Excellence Center</strong> as a continuous improvement model focused on CX, productivity, and service quality.</li>
+        <li class="lang-es">Implementé el <strong>Excellence Center</strong> como modelo de mejora continua enfocado en CX, productividad y calidad de servicio.</li>
+      </ul>
+    </div>
+    <div class="exp-item fade-in">
+      <div class="exp-meta">
+        <span class="exp-company">Atento</span>
+        <span class="exp-period">Dec 2017 – Mar 2021</span>
+      </div>
+      <div class="exp-role"><span class="lang-en">Planning Analyst · Guatemala City</span><span class="lang-es">Planning Analyst · Ciudad de Guatemala</span></div>
+      <ul class="exp-bullets">
+        <li class="lang-en">Analyzed campaign financials, billing, and developed financial forecasts for operational and commercial decisions.</li>
+        <li class="lang-es">Analicé finanzas de campañas, facturación y desarrollé pronósticos financieros para decisiones operativas y comerciales.</li>
+
+        <li class="lang-en">Built executive dashboards to guide leadership decisions and drive continuous improvement.</li>
+        <li class="lang-es">Construí dashboards ejecutivos para guiar decisiones de liderazgo e impulsar la mejora continua.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header fade-in">
+    <div class="section-tag"><span class="lang-en">// 04 — Featured Projects</span><span class="lang-es">// 04 — Proyectos Destacados</span></div>
+    <h2 class="section-title">
+      <span class="lang-en">Work That <span>Matters</span></span>
+      <span class="lang-es">Trabajo Que <span>Importa</span></span>
+    </h2>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card fade-in">
+      <div class="project-type"><span class="project-type-dot"></span><span class="lang-en">AI Adoption · Productivity Measurement</span><span class="lang-es">Adopción de IA · Medición de Productividad</span></div>
+      <div class="project-title">GitHub Copilot KPI Framework</div>
+      <div class="project-desc">
+        <span class="lang-en">Designed and led a phased KPI measurement program to quantify the business impact of GitHub Copilot across engineering teams. Built a structured framework covering adoption, developer productivity, code quality, and ROI — enabling data-driven executive decisions on AI tooling investment.</span>
+        <span class="lang-es">Diseñé y lideré un programa de medición de KPIs por fases para cuantificar el impacto de negocio de GitHub Copilot en equipos de ingeniería. Construí un marco estructurado que cubre adopción, productividad de desarrolladores, calidad de código y ROI — habilitando decisiones ejecutivas basadas en datos sobre inversión en herramientas de IA.</span>
+      </div>
+      <div class="project-tags">
+        <span class="project-tag">Azure DevOps</span>
+        <span class="project-tag"><span class="lang-en">KPI Design</span><span class="lang-es">Diseño de KPIs</span></span>
+        <span class="project-tag">Power BI</span>
+        <span class="project-tag"><span class="lang-en">Stakeholder Alignment</span><span class="lang-es">Alineación de Stakeholders</span></span>
+        <span class="project-tag"><span class="lang-en">ROI Analysis</span><span class="lang-es">Análisis de ROI</span></span>
+      </div>
+      <div class="project-impact">📊 <span class="lang-en"><strong>Phased framework</strong> — Adoption → Productivity → Quality & Business Impact</span><span class="lang-es"><strong>Marco por fases</strong> — Adopción → Productividad → Calidad e Impacto en el Negocio</span></div>
+    </div>
+    <div class="project-card fade-in">
+      <div class="project-type"><span class="project-type-dot"></span><span class="lang-en">Executive Analytics · Board Reporting</span><span class="lang-es">Analítica Ejecutiva · Reportería a la Junta</span></div>
+      <div class="project-title"><span class="lang-en">Board-Level Operations Dashboard</span><span class="lang-es">Dashboard de Operaciones a Nivel Directivo</span></div>
+      <div class="project-desc">
+        <span class="lang-en">Built and maintained enterprise Power BI dashboards presented directly to Conduent's Board of Directors. Translates large-scale operational and financial data into executive-ready visibility — covering KPI trends, financial impact, and performance signals across global accounts.</span>
+        <span class="lang-es">Construí y mantuve dashboards empresariales de Power BI presentados directamente ante la Junta Directiva de Conduent. Traducen datos operativos y financieros de gran escala en visibilidad lista para ejecutivos — cubriendo tendencias de KPIs, impacto financiero y señales de desempeño en cuentas globales.</span>
+      </div>
+      <div class="project-tags">
+        <span class="project-tag">Power BI</span>
+        <span class="project-tag"><span class="lang-en">Financial Reporting</span><span class="lang-es">Reportería Financiera</span></span>
+        <span class="project-tag"><span class="lang-en">Executive Comms</span><span class="lang-es">Comunicación Ejecutiva</span></span>
+        <span class="project-tag"><span class="lang-en">Data Visualization</span><span class="lang-es">Visualización de Datos</span></span>
+      </div>
+      <div class="project-impact">🎯 <span class="lang-en">Audience: <strong>Board of Directors</strong> — global enterprise scope</span><span class="lang-es">Audiencia: <strong>Junta Directiva</strong> — alcance enterprise global</span></div>
+    </div>
+    <div class="project-card fade-in">
+      <div class="project-type"><span class="project-type-dot"></span><span class="lang-en">Business Model Innovation · WFM</span><span class="lang-es">Innovación de Modelo de Negocio · WFM</span></div>
+      <div class="project-title">WFM-as-a-Service Model</div>
+      <div class="project-desc">
+        <span class="lang-en">Pioneered and closed the first-ever WFM-as-a-Service commercial deal at Atento for MMM Healthcare. Designed the service model from scratch — scoping, pricing, delivery framework — and drove organizational adoption, creating a new recurring revenue stream at scale.</span>
+        <span class="lang-es">Diseñé y cerré el primer acuerdo comercial de WFM-as-a-Service en Atento para MMM Healthcare. Diseñé el modelo de servicio desde cero — alcance, precios, marco de entrega — e impulsé la adopción organizacional, creando una nueva fuente de ingresos recurrentes a escala.</span>
+      </div>
+      <div class="project-tags">
+        <span class="project-tag"><span class="lang-en">Business Development</span><span class="lang-es">Desarrollo de Negocio</span></span>
+        <span class="project-tag"><span class="lang-en">Workforce Management</span><span class="lang-es">Gestión de Workforce</span></span>
+        <span class="project-tag"><span class="lang-en">Service Design</span><span class="lang-es">Diseño de Servicios</span></span>
+        <span class="project-tag"><span class="lang-en">Healthcare</span><span class="lang-es">Salud</span></span>
+      </div>
+      <div class="project-impact">💡 <span class="lang-en"><strong>First-ever</strong> at Atento — adopted as organizational standard</span><span class="lang-es"><strong>Primero en su tipo</strong> en Atento — adoptado como estándar organizacional</span></div>
+    </div>
+    <div class="project-card fade-in">
+      <div class="project-type"><span class="project-type-dot"></span><span class="lang-en">Crisis Operations · Government</span><span class="lang-es">Operaciones de Crisis · Gobierno</span></div>
+      <div class="project-title"><span class="lang-en">FEMA & COVID Vaccination Response</span><span class="lang-es">Respuesta FEMA y Vacunación COVID</span></div>
+      <div class="project-desc">
+        <span class="lang-en">Supported large-scale government emergency operations — including FEMA disaster response and the State of Maryland's COVID-19 vaccination program. Delivered workforce planning and operational support in high-pressure, time-critical public sector environments.</span>
+        <span class="lang-es">Apoyé operaciones de emergencia gubernamentales de gran escala — incluyendo la respuesta a desastres de FEMA y el programa de vacunación COVID-19 del Estado de Maryland. Entregué planificación de workforce y soporte operativo en entornos del sector público de alta presión y tiempo crítico.</span>
+      </div>
+      <div class="project-tags">
+        <span class="project-tag"><span class="lang-en">Crisis Management</span><span class="lang-es">Gestión de Crisis</span></span>
+        <span class="project-tag"><span class="lang-en">Government Ops</span><span class="lang-es">Operaciones Gubernamentales</span></span>
+        <span class="project-tag">WFM</span>
+        <span class="project-tag"><span class="lang-en">Public Sector</span><span class="lang-es">Sector Público</span></span>
+      </div>
+      <div class="project-impact">🏛️ <span class="lang-en"><strong>State & federal scope</strong> — FEMA + Maryland COVID Response</span><span class="lang-es"><strong>Alcance estatal y federal</strong> — FEMA + Respuesta COVID de Maryland</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header fade-in">
+    <div class="section-tag"><span class="lang-en">// 05 — Skills & Tools</span><span class="lang-es">// 05 — Habilidades y Herramientas</span></div>
+    <h2 class="section-title">
+      <span class="lang-en">What I <span>Bring</span></span>
+      <span class="lang-es">Lo Que <span>Aporto</span></span>
+    </h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-block fade-in">
+      <div class="skill-block-icon">⚙️</div>
+      <div class="skill-block-title"><span class="lang-en">Operations</span><span class="lang-es">Operaciones</span></div>
+      <div class="skill-block-context"><span class="lang-en">Managing 3,000+ agents across 11 countries</span><span class="lang-es">Gestionando más de 3,000 agentes en 11 países</span></div>
+      <ul class="skill-list">
+        <li><span class="lang-en">Workforce Management (WFM)</span><span class="lang-es">Gestión de Workforce (WFM)</span></li>
+        <li><span class="lang-en">Capacity Planning & Forecasting</span><span class="lang-es">Planificación de Capacidad y Forecasting</span></li>
+        <li><span class="lang-en">KPI Optimization</span><span class="lang-es">Optimización de KPIs</span></li>
+        <li><span class="lang-en">SLA Management</span><span class="lang-es">Gestión de SLAs</span></li>
+        <li><span class="lang-en">Process Improvement</span><span class="lang-es">Mejora de Procesos</span></li>
+        <li><span class="lang-en">Omnichannel CX</span><span class="lang-es">CX Omnicanal</span></li>
+      </ul>
+    </div>
+    <div class="skill-block fade-in">
+      <div class="skill-block-icon">📊</div>
+      <div class="skill-block-title"><span class="lang-en">Finance & Analytics</span><span class="lang-es">Finanzas y Analítica</span></div>
+      <div class="skill-block-context"><span class="lang-en">Board-level Power BI dashboards at Conduent</span><span class="lang-es">Dashboards de Power BI a nivel directivo en Conduent</span></div>
+      <ul class="skill-list">
+        <li><span class="lang-en">Revenue Performance Analysis</span><span class="lang-es">Análisis de Rendimiento de Ingresos</span></li>
+        <li><span class="lang-en">Financial Reporting</span><span class="lang-es">Reportería Financiera</span></li>
+        <li><span class="lang-en">Budgeting & Forecasting</span><span class="lang-es">Presupuesto y Forecasting</span></li>
+        <li><span class="lang-en">Managerial Accounting</span><span class="lang-es">Contabilidad Gerencial</span></li>
+        <li><span class="lang-en">Audit & Expense Reporting</span><span class="lang-es">Auditoría y Control de Gastos</span></li>
+        <li><span class="lang-en">Executive Dashboards</span><span class="lang-es">Dashboards Ejecutivos</span></li>
+      </ul>
+    </div>
+    <div class="skill-block fade-in">
+      <div class="skill-block-icon">🤝</div>
+      <div class="skill-block-title"><span class="lang-en">Leadership</span><span class="lang-es">Liderazgo</span></div>
+      <div class="skill-block-context"><span class="lang-en">Cross-functional teams across 4 continents</span><span class="lang-es">Equipos multifuncionales en 4 continentes</span></div>
+      <ul class="skill-list">
+        <li><span class="lang-en">Global Team Management</span><span class="lang-es">Gestión de Equipos Globales</span></li>
+        <li><span class="lang-en">Stakeholder Alignment</span><span class="lang-es">Alineación de Stakeholders</span></li>
+        <li><span class="lang-en">Vendor / Client Relations</span><span class="lang-es">Relaciones con Proveedores/Clientes</span></li>
+        <li><span class="lang-en">Cross-functional Execution</span><span class="lang-es">Ejecución Multifuncional</span></li>
+        <li><span class="lang-en">Change Management</span><span class="lang-es">Gestión del Cambio</span></li>
+        <li><span class="lang-en">Business Development</span><span class="lang-es">Desarrollo de Negocio</span></li>
+      </ul>
+    </div>
+    <div class="skill-block fade-in">
+      <div class="skill-block-icon">🤖</div>
+      <div class="skill-block-title"><span class="lang-en">AI & Productivity</span><span class="lang-es">IA y Productividad</span></div>
+      <div class="skill-block-context"><span class="lang-en">GitHub Copilot KPI program at Conduent</span><span class="lang-es">Programa de KPIs de GitHub Copilot en Conduent</span></div>
+      <ul class="skill-list">
+        <li><span class="lang-en">AI Adoption Measurement</span><span class="lang-es">Medición de Adopción de IA</span></li>
+        <li><span class="lang-en">Developer Productivity Metrics</span><span class="lang-es">Métricas de Productividad de Desarrolladores</span></li>
+        <li><span class="lang-en">ROI & Business Impact Analysis</span><span class="lang-es">Análisis de ROI e Impacto en el Negocio</span></li>
+        <li><span class="lang-en">KPI Framework Design</span><span class="lang-es">Diseño de Marcos de KPIs</span></li>
+        <li><span class="lang-en">Data-Driven Decision Making</span><span class="lang-es">Toma de Decisiones Basada en Datos</span></li>
+        <li><span class="lang-en">Program Governance</span><span class="lang-es">Gobernanza de Programas</span></li>
+      </ul>
+    </div>
+    <div class="skill-block fade-in">
+      <div class="skill-block-icon">📈</div>
+      <div class="skill-block-title"><span class="lang-en">Strategy</span><span class="lang-es">Estrategia</span></div>
+      <div class="skill-block-context"><span class="lang-en">New revenue models & business innovation</span><span class="lang-es">Nuevos modelos de ingresos e innovación de negocio</span></div>
+      <ul class="skill-list">
+        <li><span class="lang-en">Business Model Design</span><span class="lang-es">Diseño de Modelos de Negocio</span></li>
+        <li><span class="lang-en">Operational Scalability</span><span class="lang-es">Escalabilidad Operativa</span></li>
+        <li><span class="lang-en">Cost Optimization</span><span class="lang-es">Optimización de Costos</span></li>
+        <li><span class="lang-en">Commercial Deal Structuring</span><span class="lang-es">Estructuración de Acuerdos Comerciales</span></li>
+        <li><span class="lang-en">Program Management</span><span class="lang-es">Gestión de Programas</span></li>
+        <li><span class="lang-en">Continuous Improvement</span><span class="lang-es">Mejora Continua</span></li>
+      </ul>
+    </div>
+    <div class="skill-block fade-in">
+      <div class="skill-block-icon">🎓</div>
+      <div class="skill-block-title"><span class="lang-en">In Progress</span><span class="lang-es">En Curso</span></div>
+      <div class="skill-block-context"><span class="lang-en">ESI School of Management · 2024–present</span><span class="lang-es">ESI School of Management · 2024–presente</span></div>
+      <ul class="skill-list">
+        <li><span class="lang-en">B.S. Technology & Business Mgmt</span><span class="lang-es">Lic. en Tecnología y Admin. de Empresas</span></li>
+        <li><span class="lang-en">Data Science</span><span class="lang-es">Ciencia de Datos</span></li>
+        <li><span class="lang-en">Business Intelligence</span><span class="lang-es">Inteligencia de Negocios</span></li>
+        <li><span class="lang-en">Advanced Analytics</span><span class="lang-es">Analítica Avanzada</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="tools-bar fade-in">
+    <span class="tool-pill">Power BI</span>
+    <span class="tool-pill">Microsoft Suite</span>
+    <span class="tool-pill">GitHub / Azure DevOps</span>
+    <span class="tool-pill">Lean Six Sigma</span>
+    <span class="tool-pill">Agile / Scrum</span>
+    <span class="tool-pill"><span class="lang-en">English — Fluent</span><span class="lang-es">Inglés — Fluido</span></span>
+    <span class="tool-pill"><span class="lang-en">Spanish — Fluent</span><span class="lang-es">Español — Nativo</span></span>
+  </div>
+</section>
+
+<!-- CTA -->
+<div id="cta">
+  <div class="cta-text">
+    <div class="cta-label"><span class="lang-en">Ready to contribute</span><span class="lang-es">Listo para contribuir</span></div>
+    <div class="cta-heading">
+      <span class="lang-en">Let's Build<br>Something Great</span>
+      <span class="lang-es">Construyamos<br>Algo Grande</span>
+    </div>
+  </div>
+  <div class="cta-actions">
+    <a href="mailto:sebastianramirezrivera@gmail.com" class="btn-dark"><span class="lang-en">Send me an email →</span><span class="lang-es">Envíame un correo →</span></a>
+    <a href="https://www.linkedin.com/in/sebastian-ramirez-rivera-25135a190/" target="_blank" class="btn-outline-dark"><span class="lang-en">View LinkedIn</span><span class="lang-es">Ver LinkedIn</span></a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <div>
+      <div class="section-header fade-in">
+        <div class="section-tag"><span class="lang-en">// 06 — Contact</span><span class="lang-es">// 06 — Contacto</span></div>
+        <h2 class="section-title">
+          <span class="lang-en">Get In <span>Touch</span></span>
+          <span class="lang-es">Ponte en <span>Contacto</span></span>
+        </h2>
+      </div>
+      <p class="contact-note fade-in">
+        <span class="lang-en">I'm currently <strong>open to senior operations, workforce, and vendor management roles</strong> — especially remote-friendly positions with US, EU, or global scope. Response time: within 24 hours.</span>
+        <span class="lang-es">Actualmente estoy <strong>abierto a roles senior en operaciones, workforce y gestión de proveedores</strong> — especialmente posiciones remotas con alcance en EE.UU., UE o global. Tiempo de respuesta: dentro de 24 horas.</span>
+      </p>
+      <div class="avail-badge fade-in">
+        <div class="avail-dot"></div>
+        <span class="lang-en">Open to opportunities</span><span class="lang-es">Abierto a oportunidades</span>
+      </div>
+    </div>
+    <div class="contact-info fade-in">
+      <a href="mailto:sebastianramirezrivera@gmail.com" class="contact-item">
+        <span class="contact-icon">✉️</span>
+        <div class="contact-detail">
+          <div class="contact-type"><span class="lang-en">Email</span><span class="lang-es">Correo</span></div>
+          <div class="contact-value">sebastianramirezrivera@gmail.com</div>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/sebastian-ramirez-rivera-25135a190/" target="_blank" class="contact-item">
+        <span class="contact-icon">🔗</span>
+        <div class="contact-detail">
+          <div class="contact-type">LinkedIn</div>
+          <div class="contact-value">linkedin.com/in/sebastian-ramirez-rivera-25135a190</div>
+        </div>
+      </a>
+      <a href="tel:+50246038031" class="contact-item">
+        <span class="contact-icon">📞</span>
+        <div class="contact-detail">
+          <div class="contact-type"><span class="lang-en">Phone / WhatsApp</span><span class="lang-es">Teléfono / WhatsApp</span></div>
+          <div class="contact-value">+502 4603-8031</div>
+        </div>
+      </a>
+      <div class="contact-item" style="cursor:default">
+        <span class="contact-icon">📍</span>
+        <div class="contact-detail">
+          <div class="contact-type"><span class="lang-en">Location</span><span class="lang-es">Ubicación</span></div>
+          <div class="contact-value"><span class="lang-en">Guatemala City, GT · Remote OK</span><span class="lang-es">Ciudad de Guatemala, GT · Remoto OK</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">SR</span>
+  <span class="footer-copy">© 2025 Sebastian Ramirez Rivera</span>
+  <div class="footer-links">
+    <a href="#hero"><span class="lang-en">Top</span><span class="lang-es">Arriba</span></a>
+    <a href="#about"><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a>
+    <a href="#footprint">Global</a>
+    <a href="#experience"><span class="lang-en">Experience</span><span class="lang-es">Experiencia</span></a>
+    <a href="#projects"><span class="lang-en">Projects</span><span class="lang-es">Proyectos</span></a>
+    <a href="#contact"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a>
+  </div>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.documentElement.classList.remove('lang-en','lang-es');
+  document.documentElement.classList.add('lang-' + lang);
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  document.title = lang === 'es'
+    ? 'Sebastian Ramirez — Líder Senior en Operaciones'
+    : 'Sebastian Ramirez — Senior Operations Leader';
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80);
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
